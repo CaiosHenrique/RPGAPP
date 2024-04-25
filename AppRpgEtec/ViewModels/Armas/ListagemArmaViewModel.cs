@@ -14,12 +14,28 @@ namespace AppRpgEtec.ViewModels.Armas
         {
             string token = Preferences.Get("UsuarioToken", string.Empty);
             aService = new ArmaService(token);
-            Armas = new ObservableCollection<Arma>();
+            Armas = new ObservableCollection<Arma>();   
             // descarte do retorno
             _ = ObterArmas();
 
-            //TODO: Você deverá criar o método ObterArmas, observando como foi realizado na viewModel de Personagens
-            //ObterArmas();            
+                NovaArmaCommand = new Command(async () => { await ExibirCadastroArma(); });
+
+
+        }
+        public ICommand NovaArmaCommand { get; set;  }
+
+
+        public async Task ExibirCadastroArma()
+        {
+            try
+            {
+                await Shell.Current.GoToAsync("cadArmaView");
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage
+                        .DisplayAlert("Ops", ex.Message + " Detalhes: " + ex.InnerException, "Ok");
+            }
         }
 
         public async Task ObterArmas()

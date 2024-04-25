@@ -12,4 +12,10 @@ public partial class ListagemView : ContentPage
 		BindingContext = viewModel;
         Title = "Armas - AppRpg";
     }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        _ = viewModel.ObterArmas();
+    }
 }

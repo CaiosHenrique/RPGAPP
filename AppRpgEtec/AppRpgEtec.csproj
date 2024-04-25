@@ -68,6 +68,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\Armas\CadastroArmaView.xaml.cs">
+	    <DependentUpon>CadastroArmaView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Personagens\CadastroPersonagemView.xaml.cs">
+	    <DependentUpon>CadastroPersonagemView.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\Usuarios\LoginView.xaml.cs">
 	    <DependentUpon>LoginView.xaml</DependentUpon>
 	  </Compile>
@@ -80,10 +86,13 @@
 	  <MauiXaml Update="DescriptionView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Armas\CadastroArmaView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Armas\ListagemView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Personagens\CadastroPesonagemView.xaml">
+	  <MauiXaml Update="Views\Personagens\CadastroPersonagemView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Usuarios\CadastroView.xaml">
